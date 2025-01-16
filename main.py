@@ -23,12 +23,12 @@ class Application:
         self.root.quit()
         self.root.destroy()
 
+if __name__ == "__main__":
+    # Ustawienia okna
+    root = tk.Tk()
 
-# Ustawienia okna
-root = tk.Tk()
-
-# Tworzymy aplikację
-app = Application(root)
-
-# Pętla do uruchamiania okna
-root.mainloop()
+    # Tworzymy aplikację
+    app = Application(root)
+    
+    # Pętla do uruchamiania okna
+    root.mainloop()

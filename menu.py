@@ -26,6 +26,15 @@ class Menu:
         self.button = ttk.Button(master=self.frame_left, text='Rysuj wykres')
         self.button.pack()
 
+        #Autorzy
+        self.authors_label = ttk.Label(
+            self.frame_left, 
+            text="Projekt wykonali:\nSzymon Kamiński \nAdrian Kowalewski \nFranciszek Szarwiła", 
+            justify="center", 
+            font=("Arial", 10, "italic")
+        )
+        self.authors_label.pack(side='bottom', pady=(10, 0))
+
     def create_label_entry(self, frame, label_text):
         #Tworzenie etykiet
         label = ttk.Label(master=frame, text=label_text)
