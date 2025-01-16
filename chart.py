@@ -1,8 +1,7 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
-
 
 class Chart:
     def __init__(self, master, menu_instance):
@@ -30,6 +29,10 @@ class Chart:
         if values:
             x_start, x_end, chart_type = values
 
+            if chart_type not in ('Wykres liniowy', 'Wykres kwadratowy'):
+                messagebox.showerror('Błąd', 'Podaj rodzaj wykresu')
+                return
+
             x = [x_start + i * (x_end - x_start) / 100 for i in range(101)]
             if chart_type == 'Wykres liniowy':
                 y = x
@@ -42,4 +45,4 @@ class Chart:
             self.canvas.draw()
 
         else:
-            print("Błąd w danych wejściowych")
+            return None

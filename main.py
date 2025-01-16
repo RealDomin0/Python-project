@@ -1,11 +1,7 @@
 import tkinter as tk
-from tkinter import ttk
-# import matplotlib.pyplot as plt
-# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 from menu import Menu
 from chart import Chart
-
 
 class Application:
     def __init__(self, root):

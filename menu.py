@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
 class Menu:
     def __init__(self, master):
@@ -7,7 +7,7 @@ class Menu:
         self.frame_left = ttk.Frame(master, borderwidth=10, relief=tk.GROOVE)
         self.frame_left.pack(side='left', fill=tk.Y)
 
-        # Elementy menu
+        #### Elementy menu ####
         # Etykiety
         self.entry_first = self.create_label_entry(self.frame_left, "Wartość początkowa")
         self.entry_last = self.create_label_entry(self.frame_left, "Wartość końcowa")
@@ -43,10 +43,6 @@ class Menu:
             chart_type = self.combo.get()
             return start_value, end_value, chart_type
         except ValueError:
+            messagebox.showerror("Błąd", "Błąd danych wejściowych! Upewnij się, że podałeś poprawne liczby.")
             return None
         
-    def button_draw_chart(self):
-        if hasattr(self, 'chart_instance'): #Funkcja hasattr() zwraca True, jeśli określony obiekt ma określony atrybut, w przeciwnym razie False
-            self.chart_instance.draw_chart()
-        
-    
